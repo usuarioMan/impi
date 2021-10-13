@@ -1,11 +1,7 @@
-import time
 from lxml.html import document_fromstring, HtmlElement
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as ec
-
 from selenium_impi.buscador_negativas import buscar_negativas
+from selenium_impi.extraction_negativas import extraction
 
 
 def busqueda_simple(driver):
@@ -33,34 +29,6 @@ def get_html_element(text_response):
         pass
 
 
-def chunks(lst, n):
-    """Yield successive n-sized chunks from lst."""
-    for i in range(0, len(lst), n):
-        yield lst[i:i + n]
-
-
-def seleccionar_todos(driver):
-    WebDriverWait(driver, 30).until(
-        ec.element_to_be_clickable((By.XPATH, '''//input[@name="busquedaSimpleForm:seleccionarTodos"]'''))).click()
-
-
-def scraping(driver: webdriver.Chrome):
-    wait = WebDriverWait(driver, 30)
-
-    WebDriverWait(driver, 30).until(
-        ec.element_to_be_clickable((By.XPATH, '''//input[@name="busquedaSimpleForm:seleccionarTodos"]'''))).click()
-
-    WebDriverWait(driver, 30).until(
-        ec.element_to_be_clickable((By.ID, '''busquedaSimpleForm:exportarXLS'''))
-    )
-    wait.until(
-        ec.element_to_be_clickable((By.ID, '''busquedaSimpleForm:exportarXLS'''))
-    )
-    driver.find_element_by_id('''busquedaSimpleForm:exportarXLS''').click()
-
-    driver.find_element_by_xpath('''//a[@aria-label="Next Page"]''').click()
-
-
 def set_driver():
     options = webdriver.ChromeOptions()
     prefs = {'download.default_directory': '/Users/usuarioman/Ley/IMPI/DownloadNegativas'}
@@ -72,9 +40,7 @@ def set_driver():
 def main():
     driver = set_driver()
     buscar_negativas(driver)
-    for _ in range(100):
-        scraping(driver)
-        time.sleep(2)
+    extraction(driver)
 
 
 if __name__ == '__main__':
