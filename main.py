@@ -2,7 +2,7 @@ import asyncio
 import uvicorn
 from fastapi import FastAPI
 from fastapi_utils.tasks import repeat_every
-from services.session_management import GlobalSession
+from client.session_management import GlobalSession
 from db.utils import motor_global_init
 from routes.busqueda_simple import plain_search
 
