@@ -40,7 +40,8 @@ def set_driver():
 def main():
     driver = set_driver()
     buscar_negativas(driver)
-    extraction(driver)
+    for _ in range(100):
+        extraction(driver)
 
 
 if __name__ == '__main__':
