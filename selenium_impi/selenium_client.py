@@ -1,5 +1,7 @@
 from lxml.html import document_fromstring, HtmlElement
 from selenium import webdriver
+
+from db.db_engine import create_connection
 from selenium_impi.buscador_negativas import buscar_negativas
 from selenium_impi.extraction_negativas import extraction
 
@@ -45,4 +47,5 @@ def main():
 
 
 if __name__ == '__main__':
+    create_connection()
     main()
