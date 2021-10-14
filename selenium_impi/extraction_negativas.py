@@ -4,11 +4,13 @@ from selenium.common.exceptions import ElementClickInterceptedException, Timeout
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver import Chrome
+
+from db.utils import save_expedientes
 
 
 def seleccionar_todos(driver):
     try:
-        # XPATH
         WebDriverWait(driver, 30).until(
             ec.element_to_be_clickable((By.XPATH, '''//input[@name="busquedaSimpleForm:seleccionarTodos"]'''))).click()
 
@@ -25,6 +27,14 @@ def seleccionar_todos(driver):
                     ec.element_to_be_clickable((By.CLASS_NAME, '''busquedaSimpleForm:seleccionarTodos'''))).click()
 
 
+def extraer_numero_expediente(driver: Chrome):
+    html = document_fromstring(driver.page_source)
+    rows = html.xpath('''//tr[@data-ri="0"]''')
+    expedientes = list(set([row[1][0].text for row in rows]))
+    print(expedientes, flush=True)
+    save_expedientes(expedientes)
+
+
 def descargar_xls(driver):
     WebDriverWait(driver, 30).until(
         ec.element_to_be_clickable((By.ID, '''busquedaSimpleForm:exportarXLS'''))).click()
@@ -37,5 +47,5 @@ def next_page(driver):
 
 def extraction(driver):
     seleccionar_todos(driver)
-    descargar_xls(driver)
+    extraer_numero_expediente(driver)
     next_page(driver)
