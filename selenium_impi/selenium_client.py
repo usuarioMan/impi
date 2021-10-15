@@ -1,9 +1,9 @@
 from lxml.html import document_fromstring, HtmlElement
 from selenium import webdriver
-
 from db.db_engine import create_connection
 from selenium_impi.buscador_negativas import buscar_negativas
-from selenium_impi.extraction_negativas import extraction
+from selenium_impi.extraction_expedientes import extract_expediente
+from selenium_impi.extraction_negativas import extraction, lista_expedientes
 
 
 def busqueda_simple(driver):
@@ -42,8 +42,15 @@ def set_driver():
 def main():
     driver = set_driver()
     buscar_negativas(driver)
-    for _ in range(100):
-        extraction(driver)
+    try:
+        for _ in range(170):
+            extraction(driver)
+
+    except Exception:
+        pass
+
+    flat_expediente = [item for sublist in lista_expedientes for item in sublist]
+    extract_expediente(driver, flat_expediente)
 
 
 if __name__ == '__main__':

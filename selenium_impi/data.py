@@ -1,0 +1,56 @@
+
+ids = {
+    'datos_generales': {
+        'numero_expediente': 'j_idt129:0:dataNumExpId',
+        'numero_registro': '',
+        'fecha_presentacion': 'j_idt139:0:dataFechaPresId',
+        'fecha_inicio_uso': '',
+        'fecha_concesion': '',
+        'fecha_vigencia': '',
+        'fecha_publicacion_solicitud': 'j_idt159:0:dataFechaPubId',
+        'denominación': 'j_idt164:0:dataDenId',
+        'descripcion_marca': '',
+        'tipo_solicitud': 'j_idt174:0:dataTipoSolId',
+        'tipo_marca': '',
+        'elementos_solicita_proteccion': '',
+        'numero_registro_internacional': '',
+        'traduccion': '',
+        'transliteracion': '',
+    },
+    'imagen': {
+        'imagen': '',
+        'codigo_viena': '',
+    },
+    'datos_titular': {
+        'nombre': 'j_idt233:0:dataTitNomId',
+        'direccion': 'j_idt238:0:dataTitDirId',
+        'poblacion': 'j_idt243:0:dataTitPobId',
+        'codigo_postal': 'j_idt248:0:dataTitCPId',
+        'pais': 'j_idt253:0:dataTitPaisId',
+        'nacionalidad': 'j_idt258:0:dataTitNacId',
+        'telefono': 'j_idt268:0:dataTitTelId',
+        'fax': '',
+        'email': 'j_idt278:0:dataTitEmailId',
+    },
+    'establecimiento': {
+        'direccion': 'j_idt287:0:dataEstabDirId',
+        'poblacion': 'j_idt292:0:dataEstabPobId',
+        'codigo_postal': 'j_idt297:0:dataEstabCPId',
+        'pais': 'j_idt302:0:dataEstabPaisId',
+    },
+    'productos_servicios': {
+        'clase': 'dtGrdProductosId:0:dtTblProdServId:0:claseProdId',
+        'descripcion': 'dtGrdProductosId:0:dtTblProdServId:0:descProId',
+    },
+    'datos_apoderado': {
+        'nombre': 'dtGrdApoderadosId:0:dataApoNomId',
+        'direccion': 'dtGrdApoderadosId:0:dataApoDirId',
+        'poblacion': 'dtGrdApoderadosId:0:dataApoPobId',
+        'codigo_postal': 'dtGrdApoderadosId:0:dataApoCPId',
+        'pais': 'dtGrdApoderadosId:0:dataApoPaisId',
+        'nacionalidad': '',
+        'telefono': '',
+        'fax': '',
+        'email': '',
+    }
+}

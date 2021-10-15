@@ -1,4 +1,4 @@
-from db.db_engine import Expediente, Cliente
+from models.cliente import Expediente, Cliente
 
 
 def save_expedientes(lista_expedientes: list):
