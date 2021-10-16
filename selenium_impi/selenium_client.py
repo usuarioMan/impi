@@ -1,6 +1,6 @@
 from lxml.html import document_fromstring, HtmlElement
 from selenium import webdriver
-from db.db_engine import create_connection
+from db.db_engine import create_connection, create_index
 from selenium_impi.buscador_negativas import buscar_negativas
 from selenium_impi.extraction_expedientes import extract_expediente
 from selenium_impi.extraction_negativas import extraction, lista_expedientes
@@ -55,4 +55,5 @@ def main():
 
 if __name__ == '__main__':
     create_connection()
+    create_index()
     main()
