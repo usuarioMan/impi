@@ -3,7 +3,7 @@ from selenium import webdriver
 from db.db_engine import create_connection, create_index
 from selenium_impi.buscador_negativas import buscar_negativas
 from selenium_impi.extraction_expedientes import extract_expediente
-from selenium_impi.extraction_negativas import extraction, lista_expedientes
+from selenium_impi.extraction_negativas import extraer_informacion_expedientes, lista_expedientes
 
 
 def busqueda_simple(driver):
@@ -18,6 +18,11 @@ def busqueda_simple(driver):
     input_b.click()
     input_c.click()
     input_d.click()
+
+
+def busqueda_especial(driver):
+    driver.get("https://siga.impi.gob.mx/newSIGA/content/common/principal.jsf")
+    driver.find_element_by_link_text("Búsqueda especializada").click()
 
 
 def get_html_element(text_response):
@@ -44,7 +49,7 @@ def main():
     buscar_negativas(driver)
     try:
         for _ in range(170):
-            extraction(driver)
+            extraer_informacion_expedientes(driver)
 
     except Exception:
         pass

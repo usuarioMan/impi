@@ -4,9 +4,10 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-from lxml.html import fromstring, HtmlElement
-from data import ids
+
+from db.db_engine import create_connection, create_index
 from models.cliente import Expediente, Cliente, Apoderado
+from selenium_impi.data import ids
 
 
 def buscar_expediente(driver: Chrome, expediente: str):
@@ -195,6 +196,8 @@ def extraer_informacion_expediente(driver):
 
 
 def extract_expediente(driver: Chrome, lista_expedientes):
+    create_connection()
+    create_index()
     for expediente in lista_expedientes:
         try:
             buscar_expediente(driver, expediente)
