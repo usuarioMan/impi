@@ -1,11 +1,10 @@
 import sys
 import time
 from lxml.html import document_fromstring
-from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
+from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
-from lxml.html import HtmlElement
 import re
 from math import ceil
 
