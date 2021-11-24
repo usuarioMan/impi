@@ -1,0 +1,17 @@
+<Response>
+    <Gather tal:condition="income_call">
+        <Say language="es-US" voice="Polly.Penelope">
+                ${mensaje}
+        </Say>
+    </Gather>
+    <Say tal:condition="option_one" language="es-US" voice="Polly.Penelope">
+            ${mensaje}
+    </Say>
+    <Say tal:condition="option_two" language="es-US" voice="Polly.Penelope">
+            ${mensaje}
+    </Say>
+    <Say tal:condition="incorrect" language="es-US" voice="Polly.Penelope">
+            ${mensaje}
+    </Say>
+
+</Response>
