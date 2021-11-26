@@ -10,7 +10,7 @@
   <component name="PyNamespacePackagesService">
     <option name="namespacePackageFolders">
       <list>
-        <option value="$MODULE_DIR$/selenium_impi" />
+        <option value="$MODULE_DIR$/app/selenium_impi" />
       </list>
     </option>
   </component>

@@ -1,6 +1,5 @@
-from selenium_impi.buscadores import BusquedaEspecializada
-from selenium_impi.extraction_expedientes import extract_expediente
-import schedule
+from app.selenium_impi.buscadores import BusquedaEspecializada
+from app.selenium_impi.extraction_expedientes import extract_expediente
 
 
 def busqueda_especializada_marcas(num_resultados_mostrados: int = 75):

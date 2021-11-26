@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as ec
 def set_driver():
     options = webdriver.ChromeOptions()
     prefs = {'download.default_directory': '/Users/usuarioman/Ley/IMPI/DownloadNegativas'}
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_experimental_option('prefs', prefs)
     driver = webdriver.Chrome('/Users/usuarioman/WebDrivers/chromedriver', options=options)
     return driver

@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-from db.db_engine import create_connection, create_index
-from models.cliente import Expediente, Cliente, Apoderado
-from selenium_impi.data import ids
+from app.db.db_engine import create_connection, create_index
+from app.models.cliente import Expediente, Cliente, Apoderado
+from app.selenium_impi.data import ids
 
 
 def buscar_expediente(driver: Chrome, expediente: str):

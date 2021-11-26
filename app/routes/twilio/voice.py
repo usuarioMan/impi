@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from fastapi_chameleon import template
 from starlette.requests import Request
 
-from utils.twilio_utils import http_validation
+from app.utils.twilio_utils import http_validation
 
 router = APIRouter()
 

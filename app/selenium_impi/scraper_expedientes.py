@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as ec
 import re
 from math import ceil
 
-from exceptions.selenium_impi import ScrapingError
+from app.exceptions.selenium_impi import ScrapingError
 
 __lista_expedientes = list()
 

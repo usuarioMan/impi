@@ -4,9 +4,9 @@ from selenium.common.exceptions import StaleElementReferenceException, NoSuchEle
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
-from exceptions.selenium_impi import InvalidParameter
-from selenium_impi.scraper_expedientes import ScraperExpedientes
-from selenium_impi.utils import set_driver
+from app.exceptions.selenium_impi import InvalidParameter
+from app.selenium_impi.scraper_expedientes import ScraperExpedientes
+from app.selenium_impi.utils import set_driver
 
 
 class Busqueda:
