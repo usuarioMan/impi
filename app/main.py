@@ -28,6 +28,11 @@ def template_configuration():
     fastapi_chameleon.global_init(template_folder, auto_reload=dev_mode)
 
 
+@app.on_event('startup')
+def kafka_configuration():
+    pass
+
+
 @app.post('/event_handler')
 async def event_handler():
     return {"event_reception": True}
